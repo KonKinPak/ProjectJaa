@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Count Me!</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section> 
+            <h1 class='title'>Count People in your building!</h1>
+        <div class='button'>
+            <button onclick="startOn()" class="button1" style="background-image: linear-gradient(to right, rgb(210, 255, 185),rgb(248, 248, 144));">start</button>
+            <button onclick="stop()"  class="button1" style="background-image: linear-gradient(to right, rgb(255, 185, 185),rgb(248, 144, 222));">stop</button>
+            <button onclick ="refresh()"  class="button1" style="background-image: linear-gradient(to right, rgb(179, 175, 162),rgb(243, 239, 225));">clear</button>
+        </div>
+        </section>
+        <div align="center">
+            <label for="loop-time" class="default-text">Choose time for updating data:</label>
+            <select name="loop-time" id="loop-time" >
+                <option value=10>10 Seconds</option>
+                <option value=30>30 Seconds</option>
+                <option value=60>1 Minute</option>
+                <option value=300>5 Minutes</option>
+            </select>
+        </div>
+        
+        <p id="connect" class="default-text" >disconnect with netpie...</p>
+        <div id="run-time" onload="onAir()"></div>
+        <section>
+            <table id="main-table">
+                <thead>
+                    <tr id="main-table">
+                        <th> เวลา </th>
+                        <th> จำนวนคนเข้า </th>
+                        <th> จำนวนคนออก </th>
+                        <th> จำนวนคนในตึก </th>
+                    </tr>
+                </thead>
+                <tbody id="main-table-body">
+
+                </tbody>
+            </table>
+        </section>
+        
+    </body>
+</html>
